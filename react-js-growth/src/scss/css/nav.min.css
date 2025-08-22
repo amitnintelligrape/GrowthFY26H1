@@ -1,0 +1,119 @@
+.nav__list {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.nav__item a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav__item a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #111;
+    width: 200px;
+    flex-direction: column;
+    display: none;
+  }
+  .nav--open {
+    display: flex;
+  }
+  .nav__list {
+    flex-direction: column;
+    gap: 0;
+  }
+  .nav__item {
+    padding: 1rem;
+    border-bottom: 1px solid #333;
+  }
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+}
+.nav-toggle--open .header__hamburger {
+  background: transparent;
+}
+.nav-toggle--open .header__hamburger::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+.nav-toggle--open .header__hamburger::after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+.nav-toggle .hamburger {
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  display: block;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.nav-toggle .hamburger::before, .nav-toggle .hamburger::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.nav-toggle .hamburger::before {
+  top: -8px;
+}
+.nav-toggle .hamburger::after {
+  bottom: -8px;
+}
+
+.btn {
+  font-weight: 500;
+}
+.btn-primary {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #FE5D37;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid #FE5D37;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn.rounded-pill {
+  border-radius: 50rem !important;
+}
+.btn.px-3 {
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+}
+.btn.d-none {
+  display: none !important;
+}
+
+@media (min-width: 992px) {
+  .btn.d-lg-block {
+    display: block !important;
+  }
+}

@@ -1,0 +1,22 @@
+.users {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+.users div {
+  flex-grow: 1;
+  width: 25%;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #000;
+}
+.users div:first-child {
+  text-align: left;
+  border-right: 0;
+}
+.users div:nth-child(2) {
+  border-right: 0;
+}
+.users div:last-child {
+  border-left: 0;
+}

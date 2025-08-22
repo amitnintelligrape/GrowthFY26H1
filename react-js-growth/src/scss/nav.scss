@@ -1,0 +1,121 @@
+@use './variables' as *;
+@use './mixins/functions' as *;
+@use './mixins/breakpoint' as *;
+@use './mixins/button' as *;
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    gap: rem(32);
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item a {
+    color: $white;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  @include respond(md) {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: $cofee;
+    width: rem(200);
+    flex-direction: column;
+    display: none;
+
+    &--open {
+      display: flex;
+    }
+
+    &__list {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    &__item {
+      padding: rem(16);
+      border-bottom: rem(1) solid $dark-gray;
+    }
+  }
+  &-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+
+    @include respond(md) {
+      display: block;
+    }
+
+    &--open .header__hamburger {
+      background: transparent;
+
+      &::before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+        bottom: 0;
+      }
+    }
+    .hamburger {
+      width: rem(24);
+      height: rem(2);
+      background: $white;
+      display: block;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+  
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: rem(24);
+        height: rem(2);
+        background: $white;
+        transition: all 0.3s ease-in-out;
+      }
+  
+      &::before {
+        top: rem(-8);
+      }
+  
+      &::after {
+        bottom: rem(-8);
+      }
+    }
+  }
+}
+.btn{
+  font-weight: 500;
+  &-primary {
+    @include button($orange, $white);
+  }
+  &.rounded-pill {
+    border-radius: rem(800) !important
+  }
+  &.px-3 {
+    padding-right: rem(16) !important;
+    padding-left: rem(16) !important
+  }
+  &.d-none {
+    display: none !important
+  }
+}
+@include respond(lg-min){
+  .btn{
+    &.d-lg-block{
+      display: block !important;
+    }
+  }
+}

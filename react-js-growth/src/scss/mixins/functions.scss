@@ -1,0 +1,19 @@
+@use 'sass:color';
+@use 'sass:math';
+@use 'sass:map';
+
+@function rem($px, $base: 16) {
+  @return math.div($px, $base) * 1rem;
+}
+@function lighten-color($color, $amount: 10%) {
+    @return color.adjust($color, $lightness: $amount);
+}
+  
+@function darken-color($color, $amount: 10%) {
+    @return color.adjust($color, $lightness: -$amount);
+}
+$colors: (
+  "primary": #3498db,
+  "secondary": #2ecc71,
+  "danger": #e74c3c,
+);

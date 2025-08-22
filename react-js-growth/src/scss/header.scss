@@ -1,0 +1,25 @@
+@use './variables' as *;
+@use './mixins/functions' as *;
+.header {
+  background-color: $Dgray;
+  color: $white;
+  padding: rem(16) rem(32);
+  position: relative;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo a {
+    font-size: rem(24);
+    font-weight: bold;
+    color: $white;
+    text-decoration: none;
+  }
+}
+.App{
+  height:81vh;
+  padding: rem(32);
+}
