@@ -5,7 +5,7 @@ const Header = ({ isLoggedIn, onLogout })=>{
     const toggleMenu = () => setMenuOpen(!menuOpen);
     //console.log(isLoggedIn);
     return(
-        <header className="header">
+        <header className="header" >
             <div className="container">
                 <div className="logo">
                 <a href="/">MySite</a>
