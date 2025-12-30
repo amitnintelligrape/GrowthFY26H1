@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import PureComponent from "../Components/PureComponent";
 import HOC from "../Components/Hoc";
+import ErrorBoundary from "../Components/ErrorBoundary";
+import Counter from "../features/counter/Counter";
 const HocExample = HOC(PureComponent);
 const Home = () =>{
     const [age, setAge] = useState(0);
@@ -15,6 +17,9 @@ const Home = () =>{
 
             <h3>HOC Component Example</h3>
             <HocExample name="Saurabh" />
+            <ErrorBoundary>
+            <Counter />
+            </ErrorBoundary>
         </>
     );
 }
