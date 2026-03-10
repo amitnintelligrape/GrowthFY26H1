@@ -1,0 +1,61 @@
+.investment-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .investment-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .investment-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: 0.3s;
+  }
+  
+  .investment-container input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,123,255,0.3);
+  }
+  
+  .investment-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .investment-container button:hover {
+    background: #0056b3;
+  }
+  
+  .investment-container h3 {
+    margin-top: 20px;
+    color: #28a745;
+  }
+  
+  .investment-container .example {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+  }

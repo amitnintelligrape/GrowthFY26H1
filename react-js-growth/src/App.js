@@ -5,6 +5,8 @@ import Footer from './Components/Footer';
 import Map from './pages/Map';
 import './scss/css/style.min.css';
 import { ThemeContext } from './Components/ThemeContext';
+import TicTacToe from "./Components/TicTacToe";
+import InvestmentCalculator from "./Components/InvestmentCalculator";
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -52,6 +54,8 @@ function App() {
                 }
               />
               <Route path="/css-map" element={<Map />} />
+              <Route path="/TicTacToe" element={<TicTacToe />} />
+              <Route path="/investment" element={<InvestmentCalculator />} />
             </Routes>
           </Suspense>
         <Footer/>
