@@ -19,6 +19,7 @@ const Header = ({ isLoggedIn, onLogout })=>{
                     <li className="nav__item"><Link to="/contact">Contact</Link></li>
                     <li className="nav__item"><Link to="/TicTacToe">TicTacToe Game</Link></li>
                     <li className="nav__item"><Link to="/investment">Investment CALC</Link></li>
+                    <li className="nav__item"><Link to="/quiz">Quiz Generator</Link></li>
                 </ul>
                 </nav>
                 {isLoggedIn ? (

@@ -7,7 +7,7 @@ import './scss/css/style.min.css';
 import { ThemeContext } from './Components/ThemeContext';
 import TicTacToe from "./Components/TicTacToe";
 import InvestmentCalculator from "./Components/InvestmentCalculator";
-
+import LLMQuizGenerator from "./Components/LLMQuizGenerator";
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Login = lazy(() => import('./pages/Login'));
@@ -56,6 +56,7 @@ function App() {
               <Route path="/css-map" element={<Map />} />
               <Route path="/TicTacToe" element={<TicTacToe />} />
               <Route path="/investment" element={<InvestmentCalculator />} />
+              <Route path="/quiz" element={<LLMQuizGenerator />} />
             </Routes>
           </Suspense>
         <Footer/>
