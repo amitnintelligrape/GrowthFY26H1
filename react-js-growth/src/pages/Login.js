@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Navigate } from 'react-router-dom';
-const Login = ({loginSuccess }) =>{
+import { useNavigate, useLocation } from 'react-router-dom';
+const Login = ({ loginSuccess }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -13,11 +15,11 @@ const Login = ({loginSuccess }) =>{
         username,
         password
       });
-      //console.log(response.data);
       const loginToken = response.data.accessToken;
       loginSuccess(loginToken);
       setError('');
-      Navigate('/dashboard');
+      const from = location.state?.from?.pathname || '/dashboard';
+      navigate(from, { replace: true });
     } catch (err) {
       setError('Invalid username or password');
     }

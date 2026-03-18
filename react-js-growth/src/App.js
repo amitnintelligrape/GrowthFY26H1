@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Map from './pages/Map';
+import ProtectedRoute from './Components/ProtectedRoute';
 import './scss/css/style.min.css';
 import { ThemeContext } from './Components/ThemeContext';
 import TicTacToe from "./Components/TicTacToe";
@@ -12,6 +13,8 @@ const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Login = lazy(() => import('./pages/Login'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
+const ItemList = lazy(() => import('./pages/Items/ItemList'));
+const ItemForm = lazy(() => import('./pages/Items/ItemForm'));
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('Token') || null);
@@ -49,8 +52,33 @@ function App() {
               <Route
                 path="/dashboard"
                 element={
-                  token ? <Dashboard /> : 
-                  <Navigate to="/login" />
+                  <ProtectedRoute token={token}>
+                    <Dashboard />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/items"
+                element={
+                  <ProtectedRoute token={token}>
+                    <ItemList token={token} />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/items/new"
+                element={
+                  <ProtectedRoute token={token}>
+                    <ItemForm token={token} />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/items/:id/edit"
+                element={
+                  <ProtectedRoute token={token}>
+                    <ItemForm token={token} />
+                  </ProtectedRoute>
                 }
               />
               <Route path="/css-map" element={<Map />} />
